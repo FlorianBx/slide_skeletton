@@ -23,6 +23,29 @@ To add a new slide to your presentation, follow these simple steps:
 
 3. **Repeat** the process for as many slides as you want to add to your presentation.
 
+## 💅 Adding CSS to Your Slides
+
+To style individual slides, follow these guidelines:
+
+1. **Include a `<style>` tag** within your HTML slide file. This tag should come after your slide's content (sections) to ensure styles are scoped properly to the slide. For example:
+
+```html
+<section class="custom-slide">
+  <h2>Custom Styled Slide</h2>
+  <p>This slide has custom styles!</p>
+</section>
+<style>
+  .custom-slide h2 {
+    color: red;
+  }
+  .custom-slide p {
+    font-size: 20px;
+  }
+</style>
+```
+
+2. **Scope your styles** by using a unique class or ID for each slide's root `<section>` and prefixing all CSS rules with it. This ensures that styles are applied only to the intended slide and do not affect others.
+
 ## 📝 Updating Your Presentation
 
 After creating your slide files in the `slides` folder, you need to add them to the list in the slide-loading script. Open the main presentation file (often `index.html`) and update the `slides` variable in the `loadAllSlides` function with the names of your new slide files.
